@@ -1,0 +1,437 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB0B217A165EAFF900E6A4EF /* ZNCoffeeScript.m in Sources */ = {isa = PBXBuildFile; fileRef = BB0B2179165EAFF900E6A4EF /* ZNCoffeeScript.m */; };
+		BB1C6FD6165E5DD000E77052 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1C6FD5165E5DD000E77052 /* Cocoa.framework */; };
+		BB1C6FE0165E5DD000E77052 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB1C6FDE165E5DD000E77052 /* InfoPlist.strings */; };
+		BB488C731662A26900755178 /* Beaker.png in Resources */ = {isa = PBXBuildFile; fileRef = BB488C711662A26900755178 /* Beaker.png */; };
+		BB488C741662A26900755178 /* Beaker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BB488C721662A26900755178 /* Beaker@2x.png */; };
+		BB6DF3C11662A9E900AC1819 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = BB6DF3BF1662A9E900AC1819 /* LICENSE.txt */; };
+		BB6DF3C21662A9E900AC1819 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BB6DF3C01662A9E900AC1819 /* README.md */; };
+		BB8D0624165ED289000E43E0 /* ZNAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8D0622165ED289000E43E0 /* ZNAboutWindowController.m */; };
+		BB8D0625165ED289000E43E0 /* ZNAboutWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8D0623165ED289000E43E0 /* ZNAboutWindow.xib */; };
+		BB8D063B165F7D71000E43E0 /* ZNMainPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8D0639165F7D71000E43E0 /* ZNMainPanelController.m */; };
+		BB8D063C165F7D71000E43E0 /* ZNMainPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8D063A165F7D71000E43E0 /* ZNMainPanel.xib */; };
+		BBB79D4B165E73E600B80E7E /* ZNShellTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB79D4A165E73E600B80E7E /* ZNShellTask.m */; };
+		BBE0F10C165E5F79004922E1 /* ZNCoffeeScriptPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE0F10B165E5F79004922E1 /* ZNCoffeeScriptPlugin.m */; };
+		BBFFF1F616610F690058B5C4 /* ErrorMark.png in Resources */ = {isa = PBXBuildFile; fileRef = BBFFF1F216610F690058B5C4 /* ErrorMark.png */; };
+		BBFFF1F716610F690058B5C4 /* ErrorMark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBFFF1F316610F690058B5C4 /* ErrorMark@2x.png */; };
+		BBFFF1F816610F690058B5C4 /* OKMark.png in Resources */ = {isa = PBXBuildFile; fileRef = BBFFF1F416610F690058B5C4 /* OKMark.png */; };
+		BBFFF1F916610F690058B5C4 /* OKMark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBFFF1F516610F690058B5C4 /* OKMark@2x.png */; };
+		BBFFF20916616B020058B5C4 /* ZNCoffeeScriptOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFF20816616B010058B5C4 /* ZNCoffeeScriptOperation.m */; };
+		BBFFF20C16616EC20058B5C4 /* ZNCoffeeScriptResult.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFF20B16616EC20058B5C4 /* ZNCoffeeScriptResult.m */; };
+		BBFFF21416623B550058B5C4 /* YRKSpinningProgressIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = BBFFF21316623B550058B5C4 /* YRKSpinningProgressIndicator.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BB0B2178165EAFF900E6A4EF /* ZNCoffeeScript.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNCoffeeScript.h; sourceTree = "<group>"; };
+		BB0B2179165EAFF900E6A4EF /* ZNCoffeeScript.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ZNCoffeeScript.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		BB1C6FD2165E5DD000E77052 /* CoffeeScript.codaplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeScript.codaplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB1C6FD5165E5DD000E77052 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		BB1C6FD8165E5DD000E77052 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		BB1C6FD9165E5DD000E77052 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		BB1C6FDA165E5DD000E77052 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BB1C6FDD165E5DD000E77052 /* CoffeeScript-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CoffeeScript-Info.plist"; sourceTree = "<group>"; };
+		BB1C6FDF165E5DD000E77052 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BB1C6FE1165E5DD000E77052 /* CoffeeScript-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoffeeScript-Prefix.pch"; sourceTree = "<group>"; };
+		BB488C711662A26900755178 /* Beaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Beaker.png; path = Graphics/Beaker.png; sourceTree = "<group>"; };
+		BB488C721662A26900755178 /* Beaker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Beaker@2x.png"; path = "Graphics/Beaker@2x.png"; sourceTree = "<group>"; };
+		BB6DF3BF1662A9E900AC1819 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE.txt; path = ../../LICENSE.txt; sourceTree = "<group>"; };
+		BB6DF3C01662A9E900AC1819 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
+		BB8D0621165ED289000E43E0 /* ZNAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNAboutWindowController.h; sourceTree = "<group>"; };
+		BB8D0622165ED289000E43E0 /* ZNAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNAboutWindowController.m; sourceTree = "<group>"; };
+		BB8D0623165ED289000E43E0 /* ZNAboutWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZNAboutWindow.xib; sourceTree = "<group>"; };
+		BB8D0638165F7D71000E43E0 /* ZNMainPanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNMainPanelController.h; sourceTree = "<group>"; };
+		BB8D0639165F7D71000E43E0 /* ZNMainPanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNMainPanelController.m; sourceTree = "<group>"; };
+		BB8D063A165F7D71000E43E0 /* ZNMainPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZNMainPanel.xib; sourceTree = "<group>"; };
+		BBB79D49165E73E600B80E7E /* ZNShellTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNShellTask.h; sourceTree = "<group>"; };
+		BBB79D4A165E73E600B80E7E /* ZNShellTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNShellTask.m; sourceTree = "<group>"; };
+		BBE0F109165E5F10004922E1 /* CodaPlugInsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CodaPlugInsController.h; path = ../Coda/CodaPlugInsController.h; sourceTree = "<group>"; };
+		BBE0F10A165E5F79004922E1 /* ZNCoffeeScriptPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNCoffeeScriptPlugin.h; sourceTree = "<group>"; };
+		BBE0F10B165E5F79004922E1 /* ZNCoffeeScriptPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNCoffeeScriptPlugin.m; sourceTree = "<group>"; };
+		BBFFF1F216610F690058B5C4 /* ErrorMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ErrorMark.png; path = Graphics/ErrorMark.png; sourceTree = "<group>"; };
+		BBFFF1F316610F690058B5C4 /* ErrorMark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ErrorMark@2x.png"; path = "Graphics/ErrorMark@2x.png"; sourceTree = "<group>"; };
+		BBFFF1F416610F690058B5C4 /* OKMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OKMark.png; path = Graphics/OKMark.png; sourceTree = "<group>"; };
+		BBFFF1F516610F690058B5C4 /* OKMark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "OKMark@2x.png"; path = "Graphics/OKMark@2x.png"; sourceTree = "<group>"; };
+		BBFFF20716616B010058B5C4 /* ZNCoffeeScriptOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNCoffeeScriptOperation.h; sourceTree = "<group>"; };
+		BBFFF20816616B010058B5C4 /* ZNCoffeeScriptOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNCoffeeScriptOperation.m; sourceTree = "<group>"; };
+		BBFFF20A16616EC20058B5C4 /* ZNCoffeeScriptResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNCoffeeScriptResult.h; sourceTree = "<group>"; };
+		BBFFF20B16616EC20058B5C4 /* ZNCoffeeScriptResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNCoffeeScriptResult.m; sourceTree = "<group>"; };
+		BBFFF21216623B550058B5C4 /* YRKSpinningProgressIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YRKSpinningProgressIndicator.h; path = ../YRKSpinningProgressIndicator/YRKSpinningProgressIndicator.h; sourceTree = "<group>"; };
+		BBFFF21316623B550058B5C4 /* YRKSpinningProgressIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YRKSpinningProgressIndicator.m; path = ../YRKSpinningProgressIndicator/YRKSpinningProgressIndicator.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BB1C6FCF165E5DD000E77052 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB1C6FD6165E5DD000E77052 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BB1C6FC7165E5DD000E77052 = {
+			isa = PBXGroup;
+			children = (
+				BBFFF21116623B480058B5C4 /* YRKSpinningProgressIndicator */,
+				BBE0F107165E5F06004922E1 /* Coda */,
+				BB1C6FDB165E5DD000E77052 /* CoffeeScript */,
+				BB1C6FD4165E5DD000E77052 /* Frameworks */,
+				BB1C6FD3165E5DD000E77052 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BB1C6FD3165E5DD000E77052 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB1C6FD2165E5DD000E77052 /* CoffeeScript.codaplugin */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BB1C6FD4165E5DD000E77052 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB1C6FD5165E5DD000E77052 /* Cocoa.framework */,
+				BB1C6FD7165E5DD000E77052 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB1C6FD7165E5DD000E77052 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB1C6FD8165E5DD000E77052 /* AppKit.framework */,
+				BB1C6FD9165E5DD000E77052 /* CoreData.framework */,
+				BB1C6FDA165E5DD000E77052 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		BB1C6FDB165E5DD000E77052 /* CoffeeScript */ = {
+			isa = PBXGroup;
+			children = (
+				BB8D0633165F7A25000E43E0 /* Sources */,
+				BB8D0626165F6D49000E43E0 /* Graphics */,
+				BB1C6FDC165E5DD000E77052 /* Supporting Files */,
+			);
+			path = CoffeeScript;
+			sourceTree = "<group>";
+		};
+		BB1C6FDC165E5DD000E77052 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BB6DF3BF1662A9E900AC1819 /* LICENSE.txt */,
+				BB6DF3C01662A9E900AC1819 /* README.md */,
+				BB1C6FDD165E5DD000E77052 /* CoffeeScript-Info.plist */,
+				BB1C6FDE165E5DD000E77052 /* InfoPlist.strings */,
+				BB1C6FE1165E5DD000E77052 /* CoffeeScript-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BB8D0626165F6D49000E43E0 /* Graphics */ = {
+			isa = PBXGroup;
+			children = (
+				BB488C711662A26900755178 /* Beaker.png */,
+				BB488C721662A26900755178 /* Beaker@2x.png */,
+				BBFFF1F216610F690058B5C4 /* ErrorMark.png */,
+				BBFFF1F316610F690058B5C4 /* ErrorMark@2x.png */,
+				BBFFF1F416610F690058B5C4 /* OKMark.png */,
+				BBFFF1F516610F690058B5C4 /* OKMark@2x.png */,
+			);
+			name = Graphics;
+			sourceTree = "<group>";
+		};
+		BB8D0633165F7A25000E43E0 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				BB8D063D165FB6A0000E43E0 /* Model */,
+				BB8D063E165FB6B5000E43E0 /* View */,
+				BB8D063F165FB6BA000E43E0 /* Controller */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		BB8D063D165FB6A0000E43E0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BB0B2178165EAFF900E6A4EF /* ZNCoffeeScript.h */,
+				BB0B2179165EAFF900E6A4EF /* ZNCoffeeScript.m */,
+				BBFFF20716616B010058B5C4 /* ZNCoffeeScriptOperation.h */,
+				BBFFF20816616B010058B5C4 /* ZNCoffeeScriptOperation.m */,
+				BBFFF20A16616EC20058B5C4 /* ZNCoffeeScriptResult.h */,
+				BBFFF20B16616EC20058B5C4 /* ZNCoffeeScriptResult.m */,
+				BBB79D49165E73E600B80E7E /* ZNShellTask.h */,
+				BBB79D4A165E73E600B80E7E /* ZNShellTask.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BB8D063E165FB6B5000E43E0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BB8D063A165F7D71000E43E0 /* ZNMainPanel.xib */,
+				BB8D0623165ED289000E43E0 /* ZNAboutWindow.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BB8D063F165FB6BA000E43E0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BBE0F10A165E5F79004922E1 /* ZNCoffeeScriptPlugin.h */,
+				BBE0F10B165E5F79004922E1 /* ZNCoffeeScriptPlugin.m */,
+				BB8D0638165F7D71000E43E0 /* ZNMainPanelController.h */,
+				BB8D0639165F7D71000E43E0 /* ZNMainPanelController.m */,
+				BB8D0621165ED289000E43E0 /* ZNAboutWindowController.h */,
+				BB8D0622165ED289000E43E0 /* ZNAboutWindowController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BBE0F107165E5F06004922E1 /* Coda */ = {
+			isa = PBXGroup;
+			children = (
+				BBE0F109165E5F10004922E1 /* CodaPlugInsController.h */,
+			);
+			name = Coda;
+			sourceTree = "<group>";
+		};
+		BBFFF21116623B480058B5C4 /* YRKSpinningProgressIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				BBFFF21216623B550058B5C4 /* YRKSpinningProgressIndicator.h */,
+				BBFFF21316623B550058B5C4 /* YRKSpinningProgressIndicator.m */,
+			);
+			name = YRKSpinningProgressIndicator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BB1C6FD1165E5DD000E77052 /* CoffeeScript */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB1C6FE4165E5DD000E77052 /* Build configuration list for PBXNativeTarget "CoffeeScript" */;
+			buildPhases = (
+				BB1C6FCE165E5DD000E77052 /* Sources */,
+				BB1C6FCF165E5DD000E77052 /* Frameworks */,
+				BB1C6FD0165E5DD000E77052 /* Resources */,
+				BBE0F111165E6566004922E1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoffeeScript;
+			productName = CoffeeScript;
+			productReference = BB1C6FD2165E5DD000E77052 /* CoffeeScript.codaplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BB1C6FC9165E5DD000E77052 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ZN;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = zdne.org;
+			};
+			buildConfigurationList = BB1C6FCC165E5DD000E77052 /* Build configuration list for PBXProject "CoffeeScript" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BB1C6FC7165E5DD000E77052;
+			productRefGroup = BB1C6FD3165E5DD000E77052 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BB1C6FD1165E5DD000E77052 /* CoffeeScript */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BB1C6FD0165E5DD000E77052 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BB1C6FE0165E5DD000E77052 /* InfoPlist.strings in Resources */,
+				BB8D0625165ED289000E43E0 /* ZNAboutWindow.xib in Resources */,
+				BB8D063C165F7D71000E43E0 /* ZNMainPanel.xib in Resources */,
+				BBFFF1F616610F690058B5C4 /* ErrorMark.png in Resources */,
+				BBFFF1F716610F690058B5C4 /* ErrorMark@2x.png in Resources */,
+				BBFFF1F816610F690058B5C4 /* OKMark.png in Resources */,
+				BBFFF1F916610F690058B5C4 /* OKMark@2x.png in Resources */,
+				BB488C731662A26900755178 /* Beaker.png in Resources */,
+				BB488C741662A26900755178 /* Beaker@2x.png in Resources */,
+				BB6DF3C11662A9E900AC1819 /* LICENSE.txt in Resources */,
+				BB6DF3C21662A9E900AC1819 /* README.md in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BBE0F111165E6566004922E1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Clean up any previous products/symbolic links in the plug-ins folder\necho \"${USER_LIBRARY_DIR}/Application Support/Coda 2/Plug-ins/${FULL_PRODUCT_NAME}\"\n\nif [ -a \"${USER_LIBRARY_DIR}/Application Support/Coda 2/Plug-ins/${FULL_PRODUCT_NAME}\" ]; then\nrm -Rf \"${USER_LIBRARY_DIR}/Application Support/Coda 2/Plug-ins/${FULL_PRODUCT_NAME}\"\nfi\n\n# Depending on the build configuration, either copy or link to the most recent product\nif [ \"${CONFIGURATION}\" == \"Debug\" ]; then\n# If we're debugging, add a symbolic link to the plug-in\nln -sf \"${TARGET_BUILD_DIR}/${FULL_PRODUCT_NAME}\" \\\n\"${USER_LIBRARY_DIR}/Application Support/Coda 2/Plug-ins/${FULL_PRODUCT_NAME}\"\nelif [ \"${CONFIGURATION}\" == \"Release\" ]; then\n# If we're compiling for release, just copy the plugin to the Coda 2 Plug-ins folder\ncp -Rfv \"${TARGET_BUILD_DIR}/${FULL_PRODUCT_NAME}\" \\\n\"${USER_LIBRARY_DIR}/Application Support/Coda 2/Plug-ins/${FULL_PRODUCT_NAME}\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BB1C6FCE165E5DD000E77052 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BBE0F10C165E5F79004922E1 /* ZNCoffeeScriptPlugin.m in Sources */,
+				BBB79D4B165E73E600B80E7E /* ZNShellTask.m in Sources */,
+				BB0B217A165EAFF900E6A4EF /* ZNCoffeeScript.m in Sources */,
+				BB8D0624165ED289000E43E0 /* ZNAboutWindowController.m in Sources */,
+				BB8D063B165F7D71000E43E0 /* ZNMainPanelController.m in Sources */,
+				BBFFF20916616B020058B5C4 /* ZNCoffeeScriptOperation.m in Sources */,
+				BBFFF20C16616EC20058B5C4 /* ZNCoffeeScriptResult.m in Sources */,
+				BBFFF21416623B550058B5C4 /* YRKSpinningProgressIndicator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		BB1C6FDE165E5DD000E77052 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BB1C6FDF165E5DD000E77052 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BB1C6FE2165E5DD000E77052 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		BB1C6FE3165E5DD000E77052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		BB1C6FE5165E5DD000E77052 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoffeeScript/CoffeeScript-Prefix.pch";
+				INFOPLIST_FILE = "CoffeeScript/CoffeeScript-Info.plist";
+				INSTALL_PATH = "~/Library/Application\\ Support/Coda\\ 2/Plug-ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = codaplugin;
+			};
+			name = Debug;
+		};
+		BB1C6FE6165E5DD000E77052 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CoffeeScript/CoffeeScript-Prefix.pch";
+				INFOPLIST_FILE = "CoffeeScript/CoffeeScript-Info.plist";
+				INSTALL_PATH = "~/Library/Application\\ Support/Coda\\ 2/Plug-ins";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = codaplugin;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BB1C6FCC165E5DD000E77052 /* Build configuration list for PBXProject "CoffeeScript" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB1C6FE2165E5DD000E77052 /* Debug */,
+				BB1C6FE3165E5DD000E77052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BB1C6FE4165E5DD000E77052 /* Build configuration list for PBXNativeTarget "CoffeeScript" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BB1C6FE5165E5DD000E77052 /* Debug */,
+				BB1C6FE6165E5DD000E77052 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BB1C6FC9165E5DD000E77052 /* Project object */;
+}

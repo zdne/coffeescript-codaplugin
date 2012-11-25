@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'CoffeeScript' target in the 'CoffeeScript' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
