@@ -2,7 +2,26 @@
 by Zdenek Nemec
 
 # Overview
+CoffeeScript Plug-in for Coda offers a convenient way to build and run CoffeeScript directly from within Coda 2. It offers 'Compile to Javascript' (⇧⌘M) and 'Run' (⇧⌘U) commands as well as automatic on-save syntax check.
 
+![Compile](http://zdne.org/codaplugin/img/compile_success.png)
+![Run](http://zdne.org/codaplugin/img/run.png)
+![Error](http://zdne.org/codaplugin/img/compile_error.png)
+
+# Requirements
+* The plug-in requires Coda 2
+* CoffeeScript
+* Tested on 10.8.2 
+
+# Build & Install
+Open the project using Xcode 4.5. Set target to release and build. Run script build phase should copy the plug-in into appropriate directory - `${USER_LIBRARY_DIR}/Application Support/Coda 2/Plug-ins/`.
+
+# Version History
+## v0.9 - Initial Revision
+* Compile
+* Run
+* On-save Syntax Check
+* Note: Settings are still hard-coded, to change PATH or NODE_PATH modify the `ZNCoffeeScript.m`
 
 # License
 
