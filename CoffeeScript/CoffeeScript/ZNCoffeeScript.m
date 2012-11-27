@@ -10,6 +10,8 @@
 #import "ZNShellTask.h"
 
 // TODO: Better env vars handling
+//static NSString * const AdditionalPath = @"/Users/jan/.nvm/v0.6.18/bin";
+//static NSString * const NodePath = @"/Users/jan/Sites/apiary-app/node_modules";
 static NSString * const AdditionalPath = @"/Users/zdenek/.nvm/v0.6.20/bin";
 static NSString * const NodePath = @"/Users/zdenek/Codebase/Apiary/apiary/node_modules";
 

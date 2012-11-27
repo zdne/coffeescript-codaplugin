@@ -183,8 +183,8 @@
         [self goToLine:[operation.result.error.userInfo[ZNErrorLineNumberKey] unsignedIntegerValue]];
     }
     else {
-        if ([self.mainPanelController.window isVisible] &&
-            self.didFailedSaveCheck) {
+        if (self.didFailedSaveCheck && 
+            [self.mainPanelController.window isVisible]) {
             [self.mainPanelController.window orderOut:self];
             self.didFailedSaveCheck = NO;
         }

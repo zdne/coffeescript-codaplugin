@@ -91,8 +91,6 @@ typedef enum ZNButtonAction : NSUInteger {
     [self.outputTextView scrollRangeToVisible:range];    
 }
 
-#pragma mark - Compile
-
 - (void)displayCompletedOperation:(ZNCoffeeScriptOperation *)operation
 {
     [self showWindow:nil];
@@ -125,6 +123,7 @@ typedef enum ZNButtonAction : NSUInteger {
     }
 }
 
+#pragma mark - Compile
 
 - (void)displayAsCompletedCompileOperation
 {
