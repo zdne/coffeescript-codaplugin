@@ -25,15 +25,17 @@
 
 + (ZNShellTask *)launchWithLaunchPath:(NSString *)path
                             arguments:(NSArray *)arguments
-                                stdIn:(NSString *)input
+                     workingDirectory:(NSString *)workingDirectory
                           environment:(NSDictionary *)environment
+                                stdIn:(NSString *)input
                              progress:(ShellTaskProgressHandler)progress
                            completion:(ShellTaskCompletionHandler)completion;
 {
     ZNShellTask *task = [[ZNShellTask alloc] initWithLaunchPath:path
                                                       arguments:arguments
-                                                          stdIn:input
+                                               workingDirectory:workingDirectory
                                                     environment:environment
+                                                          stdIn:input
                                                        progress:progress
                                                      completion:completion];
     [task launch];
@@ -49,8 +51,9 @@
 
 - initWithLaunchPath:(NSString *)path
            arguments:(NSArray *)arguments
-               stdIn:(NSString *)input
+    workingDirectory:(NSString *)workingDirectory
          environment:(NSDictionary *)environment
+               stdIn:(NSString *)input
             progress:(ShellTaskProgressHandler)progress
           completion:(ShellTaskCompletionHandler)completion
 {
@@ -64,6 +67,9 @@
 
         if (arguments)
             self.task.arguments = arguments;
+        
+        if ([workingDirectory length])
+            self.task.currentDirectoryPath = workingDirectory;
         
         if (environment)
             self.task.environment = environment;
@@ -205,8 +211,9 @@
     NSString *whichCommand = [NSString stringWithFormat:@"which %@", command];
     [ZNShellTask launchWithLaunchPath:userShell
                             arguments:@[@"-c", whichCommand]
-                                stdIn:nil
+                     workingDirectory:nil
                           environment:environment
+                                stdIn:nil
                              progress:nil
                            completion:^(NSTaskTerminationReason terminationReason, NSInteger status, NSString *standardOutput, NSString *standardError) {
                                if (completion) {

@@ -19,6 +19,9 @@
 		BB8D063B165F7D71000E43E0 /* ZNMainPanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8D0639165F7D71000E43E0 /* ZNMainPanelController.m */; };
 		BB8D063C165F7D71000E43E0 /* ZNMainPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB8D063A165F7D71000E43E0 /* ZNMainPanel.xib */; };
 		BBB79D4B165E73E600B80E7E /* ZNShellTask.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB79D4A165E73E600B80E7E /* ZNShellTask.m */; };
+		BBB8F3CF16666A6F00561652 /* ZNSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB8F3CE16666A6F00561652 /* ZNSettings.m */; };
+		BBB8F3D41666A54900561652 /* ZNSettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = BBB8F3D21666A54800561652 /* ZNSettingsWindowController.m */; };
+		BBB8F3D51666A54900561652 /* ZNSettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBB8F3D31666A54800561652 /* ZNSettingsWindow.xib */; };
 		BBE0F10C165E5F79004922E1 /* ZNCoffeeScriptPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = BBE0F10B165E5F79004922E1 /* ZNCoffeeScriptPlugin.m */; };
 		BBFFF1F616610F690058B5C4 /* ErrorMark.png in Resources */ = {isa = PBXBuildFile; fileRef = BBFFF1F216610F690058B5C4 /* ErrorMark.png */; };
 		BBFFF1F716610F690058B5C4 /* ErrorMark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BBFFF1F316610F690058B5C4 /* ErrorMark@2x.png */; };
@@ -52,6 +55,11 @@
 		BB8D063A165F7D71000E43E0 /* ZNMainPanel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZNMainPanel.xib; sourceTree = "<group>"; };
 		BBB79D49165E73E600B80E7E /* ZNShellTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNShellTask.h; sourceTree = "<group>"; };
 		BBB79D4A165E73E600B80E7E /* ZNShellTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNShellTask.m; sourceTree = "<group>"; };
+		BBB8F3CD16666A6F00561652 /* ZNSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNSettings.h; sourceTree = "<group>"; };
+		BBB8F3CE16666A6F00561652 /* ZNSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNSettings.m; sourceTree = "<group>"; };
+		BBB8F3D11666A54800561652 /* ZNSettingsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNSettingsWindowController.h; sourceTree = "<group>"; };
+		BBB8F3D21666A54800561652 /* ZNSettingsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNSettingsWindowController.m; sourceTree = "<group>"; };
+		BBB8F3D31666A54800561652 /* ZNSettingsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZNSettingsWindow.xib; sourceTree = "<group>"; };
 		BBE0F109165E5F10004922E1 /* CodaPlugInsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CodaPlugInsController.h; path = ../Coda/CodaPlugInsController.h; sourceTree = "<group>"; };
 		BBE0F10A165E5F79004922E1 /* ZNCoffeeScriptPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZNCoffeeScriptPlugin.h; sourceTree = "<group>"; };
 		BBE0F10B165E5F79004922E1 /* ZNCoffeeScriptPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZNCoffeeScriptPlugin.m; sourceTree = "<group>"; };
@@ -171,6 +179,8 @@
 				BBFFF20816616B010058B5C4 /* ZNCoffeeScriptOperation.m */,
 				BBFFF20A16616EC20058B5C4 /* ZNCoffeeScriptResult.h */,
 				BBFFF20B16616EC20058B5C4 /* ZNCoffeeScriptResult.m */,
+				BBB8F3CD16666A6F00561652 /* ZNSettings.h */,
+				BBB8F3CE16666A6F00561652 /* ZNSettings.m */,
 				BBB79D49165E73E600B80E7E /* ZNShellTask.h */,
 				BBB79D4A165E73E600B80E7E /* ZNShellTask.m */,
 			);
@@ -180,8 +190,9 @@
 		BB8D063E165FB6B5000E43E0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BB8D063A165F7D71000E43E0 /* ZNMainPanel.xib */,
 				BB8D0623165ED289000E43E0 /* ZNAboutWindow.xib */,
+				BB8D063A165F7D71000E43E0 /* ZNMainPanel.xib */,
+				BBB8F3D31666A54800561652 /* ZNSettingsWindow.xib */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -189,12 +200,14 @@
 		BB8D063F165FB6BA000E43E0 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BB8D0621165ED289000E43E0 /* ZNAboutWindowController.h */,
+				BB8D0622165ED289000E43E0 /* ZNAboutWindowController.m */,
 				BBE0F10A165E5F79004922E1 /* ZNCoffeeScriptPlugin.h */,
 				BBE0F10B165E5F79004922E1 /* ZNCoffeeScriptPlugin.m */,
 				BB8D0638165F7D71000E43E0 /* ZNMainPanelController.h */,
 				BB8D0639165F7D71000E43E0 /* ZNMainPanelController.m */,
-				BB8D0621165ED289000E43E0 /* ZNAboutWindowController.h */,
-				BB8D0622165ED289000E43E0 /* ZNAboutWindowController.m */,
+				BBB8F3D11666A54800561652 /* ZNSettingsWindowController.h */,
+				BBB8F3D21666A54800561652 /* ZNSettingsWindowController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -280,6 +293,7 @@
 				BB488C741662A26900755178 /* Beaker@2x.png in Resources */,
 				BB6DF3C11662A9E900AC1819 /* LICENSE.txt in Resources */,
 				BB6DF3C21662A9E900AC1819 /* README.md in Resources */,
+				BBB8F3D51666A54900561652 /* ZNSettingsWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +328,8 @@
 				BBFFF20916616B020058B5C4 /* ZNCoffeeScriptOperation.m in Sources */,
 				BBFFF20C16616EC20058B5C4 /* ZNCoffeeScriptResult.m in Sources */,
 				BBFFF21416623B550058B5C4 /* YRKSpinningProgressIndicator.m in Sources */,
+				BBB8F3CF16666A6F00561652 /* ZNSettings.m in Sources */,
+				BBB8F3D41666A54900561652 /* ZNSettingsWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

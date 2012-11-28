@@ -18,8 +18,9 @@ typedef void (^ShellTaskCompletionHandler)(NSTaskTerminationReason terminationRe
 // Launches given task.
 + (ZNShellTask *)launchWithLaunchPath:(NSString *)path
                             arguments:(NSArray *)arguments
-                                stdIn:(NSString *)input
+                     workingDirectory:(NSString *)workingDirectory
                           environment:(NSDictionary *)environment
+                                stdIn:(NSString *)input
                              progress:(ShellTaskProgressHandler)progress
                            completion:(ShellTaskCompletionHandler)completion;
 

@@ -9,7 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "CodaPluginsController.h"
 #import "ZNMainPanelController.h"
+#import "ZNCoffeeScript.h"
 
-@interface ZNCoffeeScriptPlugin : NSObject <CodaPlugIn, ZNMainPanelControllerDelegate>
+@interface ZNCoffeeScriptPlugin : NSObject <CodaPlugIn, ZNMainPanelControllerDelegate, ZNCoffeeScriptDelegate>
 
 @end

@@ -33,7 +33,8 @@ typedef enum ZNCoffeeScriptReturnStatus : NSInteger {
 typedef enum ZNCoffeeScriptTerminationReason : NSInteger {
     ZNCoffeeScriptTerminationReasonExit = 1,
     ZNCoffeeScriptTerminationReasonUncaughtSignal = 2,
-    ZNCoffeeScriptTerminationReasonTerminated = 0xFF
+    ZNCoffeeScriptTerminationReasonTerminated = 0xFF,
+    ZNCoffeeScriptTerminationReasonUndefined = -1
 } ZNCoffeeScriptTerminationReason;
 
 //

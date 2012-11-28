@@ -7,16 +7,17 @@
 //
 
 #import "ZNCoffeeScriptPlugin.h"
-#import "ZNCoffeeScript.h"
 #import "ZNAboutWindowController.h"
-#import "ZNMainPanelController.h"
 #import "ZNCoffeeScriptOperation.h"
+#import "ZNSettingsWindowController.h"
+#import "ZNSettings.h"
 
 @interface ZNCoffeeScriptPlugin ()
 
 @property (strong, nonatomic) CodaPlugInsController *codaPluginController;
 @property (strong, nonatomic) ZNAboutWindowController *aboutWindowController;
 @property (strong, nonatomic) ZNMainPanelController *mainPanelController;
+@property (strong, nonatomic) ZNSettingsWindowController *settingsWindowController;
 
 @property (strong, nonatomic) ZNCoffeeScriptOperation *userOperation;   // an operation that is presented to user
 @property (assign, nonatomic) BOOL didFailedSaveCheck; 
@@ -63,12 +64,17 @@
                                              keyEquivalent:@"@M"                   // coMpile
                                                 pluginName:[self name]];
         
+        [self.codaPluginController registerActionWithTitle:@"Settings"
+                                                    target:self
+                                                  selector:@selector(settings:)];
+        
         [self.codaPluginController registerActionWithTitle:@"About"
                                                     target:self
                                                   selector:@selector(about:)];
         
         // init the coffee script component
-        [ZNCoffeeScript sharedCoffeeScript];
+        [[ZNCoffeeScript sharedCoffeeScript] setDelegate:self];
+        [[ZNCoffeeScript sharedCoffeeScript] loadCoffeeEnvironment];
         
         // init main panel
         self.mainPanelController = [[ZNMainPanelController alloc] initWithWindowNibName:@"ZNMainPanel"];
@@ -80,14 +86,14 @@
 
 - (void)textViewWillSave:(CodaTextView *)textView
 {
+    if (![[ZNSettings sharedSettings] checkOnSave])
+        return;
+    
     NSString *path = [textView path];
     if ([path length]) {
         NSURL *url = [NSURL fileURLWithPath:path isDirectory:NO];
         if ([[url pathExtension] isEqualToString:@"coffee"]) {
-            //NSLog(@"coda will save a coffe file: %@", path);
-            
             NSString *editorText = [textView string];
-            
             ZNCoffeeScriptOperation *operation = [ZNCoffeeScriptOperation createOperation:ZNCoffeeScriptOperationTypeCompile
                                                                                 withInput:editorText];
             [operation runWithProgress:nil completion:^(ZNCoffeeScriptOperation *operation) {
@@ -126,6 +132,18 @@
 
 - (void)userOperationCompleted:(ZNCoffeeScriptOperation *)operation
 {
+    if (operation.result.status == ZNCoffeeScriptReturnStatusUndefined) {
+        [self.mainPanelController.window orderOut:self];
+        
+        NSAlert *alert = [[NSAlert alloc] init];
+        alert.alertStyle = NSCriticalAlertStyle;
+        alert.messageText = @"Failed to launch coffee";
+        alert.informativeText = @"Command not found. Use PATH variable in plug-in settings to set the path to coffee command.";
+        [alert runModal];
+
+        return;
+    }
+    
     [self.mainPanelController displayCompletedOperation:operation];
     self.userOperation = nil;
 }
@@ -172,10 +190,24 @@
     [self.aboutWindowController showWindow:self];
 }
 
+#pragma mark - Settings Action
+
+- (void)settings:(id)sender
+{
+    if (!self.settingsWindowController) {
+        self.settingsWindowController = [[ZNSettingsWindowController alloc] initWithWindowNibName:@"ZNSettingsWindow"];
+    }
+    
+    [self.settingsWindowController showWindow:self];
+}
+
 #pragma mark - On Save Check
 
 - (void)checkFileBeingSaved:(ZNCoffeeScriptOperation *)operation
 {
+    if (operation.result.status == ZNCoffeeScriptReturnStatusUndefined)
+        return;
+    
     if (operation.result.status != ZNCoffeeScriptReturnStatusOK) {
         self.didFailedSaveCheck = YES;
         [self.mainPanelController displayCompletedOperation:operation];
@@ -214,6 +246,14 @@
     if (self.userOperation && self.userOperation.isRunning) {
         [self.userOperation terminate];
     }
+}
+
+#pragma mark - ZNCoffeeScriptDelegate
+
+- (NSString *)defaultWorkingDirectory
+{
+    CodaTextView *codaTextView = [self.codaPluginController focusedTextView:self];
+    return [codaTextView siteLocalPath];
 }
 
 @end

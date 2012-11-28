@@ -8,15 +8,11 @@
 
 #import "ZNCoffeeScript.h"
 #import "ZNShellTask.h"
-
-// TODO: Better env vars handling
-//static NSString * const AdditionalPath = @"/Users/jan/.nvm/v0.6.18/bin";
-//static NSString * const NodePath = @"/Users/jan/Sites/apiary-app/node_modules";
-static NSString * const AdditionalPath = @"/Users/zdenek/.nvm/v0.6.20/bin";
-static NSString * const NodePath = @"/Users/zdenek/Codebase/Apiary/apiary/node_modules";
+#import "ZNSettings.h"
 
 @interface ZNCoffeeScript ()
 
+@property (copy, nonatomic) NSString *workingDirectory;
 @property (strong, nonatomic) NSDictionary *coffeeEnvironment;
 @property (copy, nonatomic) NSString *coffeeCommand;
 
@@ -39,7 +35,6 @@ static NSString * const NodePath = @"/Users/zdenek/Codebase/Apiary/apiary/node_m
 {
     self = [super init];
     if (self) {
-        [self loadCoffeeEnvironment];
     }
 
     return self;
@@ -48,19 +43,21 @@ static NSString * const NodePath = @"/Users/zdenek/Codebase/Apiary/apiary/node_m
 - (void)loadCoffeeEnvironment
 {
     NSMutableDictionary *environment = [[[NSProcessInfo processInfo] environment] mutableCopy];
+    NSDictionary *userEnvironment = [[ZNSettings sharedSettings] environment];
     
-    // PATH
-    if ([AdditionalPath length]) {
-        NSString *environmentPath = environment[@"PATH"];
-        NSString *path = [environmentPath stringByAppendingFormat:@":%@", AdditionalPath];
-        environment[@"PATH"] = path;
-    }
+    // merge user environment with process one
+    [userEnvironment enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *obj, BOOL *stop) {
+        if (!environment[key]) {
+            environment[key] = obj;
+        }
+        else {
+            NSString *processValue = environment[key];
+            // asssuming ':' delimiter
+            environment[key] = [NSString stringWithFormat:@"%@:%@", processValue, obj];
+        }
+    }];
     
-    // NODE_PATH
-    if ([NodePath length]) {
-        environment[@"NODE_PATH"] = NodePath;
-    }
-    
+    // find command
     self.coffeeEnvironment = environment;
     self.coffeeCommand = nil;
     __block ZNCoffeeScript *blockSelf = self;
@@ -70,19 +67,52 @@ static NSString * const NodePath = @"/Users/zdenek/Codebase/Apiary/apiary/node_m
                          blockSelf.coffeeCommand = path;
                          NSLog(@"coffe command set to: %@", path);
                      }];
+    
+    // resolve working directory
+    if ([[[ZNSettings sharedSettings] workingDirectory] length]) {
+        self.workingDirectory = [[ZNSettings sharedSettings] workingDirectory];
+    }
+    else if (self.delegate) {
+        self.workingDirectory = [self.delegate defaultWorkingDirectory];
+    }
+}
+
++ (ZNCoffeeScriptResult *)launchErrorResult
+{
+    ZNCoffeeScriptResult *result = [[ZNCoffeeScriptResult alloc] initWithTerminationReason:ZNCoffeeScriptTerminationReasonUndefined
+                                                                                    status:ZNCoffeeScriptReturnStatusUndefined
+                                                                            standardOutput:nil
+                                                                             standardError:nil];
+    return result;
+}
+
+- (BOOL)coffeeReady:(CoffeeScriptCompletionHandler)completion
+{
+    if (![self.coffeeCommand length]) {
+        NSLog(@"err: no coffee command");
+        
+        if (completion)
+            completion([ZNCoffeeScript launchErrorResult]);
+        
+        return NO;
+    }
+    
+    return YES;
 }
 
 #pragma mark - Version
 
 - (ZNShellTask *)version:(CoffeeScriptCompletionHandler)completion;
 {
-    NSAssert([self.coffeeCommand length], @"no coffee command");
+    if (![self coffeeReady:completion])
+        return nil;
     
     // coffee --version
     ZNShellTask *task = [ZNShellTask launchWithLaunchPath:self.coffeeCommand
                                                 arguments:@[@"--version"]
-                                                    stdIn:nil
+                                         workingDirectory:nil
                                               environment:self.coffeeEnvironment
+                                                    stdIn:nil
                                                  progress:nil
                                                completion:^(NSTaskTerminationReason terminationReason, NSInteger status, NSString *standardOutput, NSString *standardError) {
                                                    if (completion) {
@@ -118,13 +148,15 @@ static NSString * const NodePath = @"/Users/zdenek/Codebase/Apiary/apiary/node_m
 
 - (ZNShellTask *)compile:(NSString *)input completion:(CoffeeScriptCompletionHandler)completion
 {
-    NSAssert([self.coffeeCommand length], @"no coffee command");
+    if (![self coffeeReady:completion])
+        return nil;
     
     // coffee -scp --bare
     ZNShellTask *task = [ZNShellTask launchWithLaunchPath:self.coffeeCommand
                                                 arguments:@[@"-scbp"]
-                                                    stdIn:input
+                                         workingDirectory:self.workingDirectory
                                               environment:self.coffeeEnvironment
+                                                    stdIn:input
                                                  progress:nil
                                                completion:^(NSTaskTerminationReason terminationReason, NSInteger status, NSString *standardOutput, NSString *standardError) {
                                                    if (completion) {
@@ -241,13 +273,15 @@ static NSString * const NodePath = @"/Users/zdenek/Codebase/Apiary/apiary/node_m
           completion:(CoffeeScriptCompletionHandler)completion;
 
 {
-    NSAssert([self.coffeeCommand length], @"no coffee command");
+    if (![self coffeeReady:completion])
+        return nil;
     
     // coffee -s
     ZNShellTask *task = [ZNShellTask launchWithLaunchPath:self.coffeeCommand
                                                 arguments:@[@"-s"]
-                                                    stdIn:input
+                                         workingDirectory:self.workingDirectory 
                                               environment:self.coffeeEnvironment
+                                                    stdIn:input
                                                  progress:^(NSString *standardOutputUpdate, NSString *standardErrorUpdate) {
                                                      if (progress) {
                                                          progress([standardOutputUpdate length] ? standardOutputUpdate : standardErrorUpdate);
