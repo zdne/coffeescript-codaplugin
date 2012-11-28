@@ -17,6 +17,12 @@ CoffeeScript Plug-in for Coda offers a convenient way to build and run CoffeeScr
 Open the project using Xcode 4.5. Set target to release and build. Run script build phase should copy the plug-in into appropriate directory - `${USER_LIBRARY_DIR}/Application Support/Coda 2/Plug-ins/`.
 
 # Version History
+## v0.91 - Settings 
+* Added settings datamodel and its serialization
+* Added (dummy for now) settgings UI
+* Added support for working directory
+* Improved stability and user interaction, plug-in now informs user when there is no coffee command available.
+
 ## v0.9 - Initial Revision
 * Compile
 * Run
