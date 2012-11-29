@@ -14,7 +14,7 @@
 
 @property (copy, nonatomic) NSString *workingDirectory;
 @property (strong, nonatomic) NSDictionary *coffeeEnvironment;
-@property (copy, nonatomic) NSString *coffeeCommand;
+@property (copy, atomic) NSString *coffeeCommand;
 
 @end
 

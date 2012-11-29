@@ -42,8 +42,9 @@ static NSString * const ZNWorkingDirectoryKey = @"org.zdne.codaplugin.coffeescri
     }
     else {
         self.environment = nil;
-//        self.environment = @{@"PATH" : @"/Users/zdenek/.nvm/v0.6.20/bin",
-//                             @"NODE_PATH" : @"/Users/zdenek/Codebase/Apiary/apiary/node_modules:"};
+        // example:
+        // self.environment = @{@"PATH" : @"/Users/zdenek/.nvm/v0.6.20/bin",
+        //                      @"NODE_PATH" : @"/Users/zdenek/Codebase/Apiary/apiary/node_modules"};
     }
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:ZNCheckOnSaveKey]) {
@@ -66,12 +67,18 @@ static NSString * const ZNWorkingDirectoryKey = @"org.zdne.codaplugin.coffeescri
     if (self.environment) {
         [[NSUserDefaults standardUserDefaults] setObject:self.environment forKey:ZNEnvironmentKey];
     }
+    else {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:ZNEnvironmentKey];
+    }
     
     [[NSUserDefaults standardUserDefaults] setBool:self.checkOnSave forKey:ZNCheckOnSaveKey];
 
     if ([self.workingDirectory length]) {
         [[NSUserDefaults standardUserDefaults] setObject:self.workingDirectory forKey:ZNWorkingDirectoryKey];
     }
+    else {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:ZNWorkingDirectoryKey];
+    }    
 }
 
 @end

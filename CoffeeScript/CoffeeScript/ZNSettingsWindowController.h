@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ZNSettingsWindowController : NSWindowController
+@interface ZNSettingsWindowController : NSWindowController <NSTableViewDelegate, NSTableViewDataSource>
 
 @property (strong) IBOutlet NSTableView *tableView;
 @property (strong) IBOutlet NSButton *addButton;
