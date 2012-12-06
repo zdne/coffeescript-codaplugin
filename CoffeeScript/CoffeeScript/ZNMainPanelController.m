@@ -83,8 +83,7 @@ typedef enum ZNButtonAction : NSUInteger {
     
     NSTextStorage *outputStorage = self.outputTextView.textStorage;
     if (outputStorage) {
-        outputStorage.foregroundColor = [NSColor lightGrayColor];
-        outputStorage.font = [NSFont userFixedPitchFontOfSize:10.0];
+        [ZNMainPanelController applyOutputTextStorageAppearance:outputStorage];
     }
 
     range = NSMakeRange([[self.outputTextView string] length], 0);
@@ -185,8 +184,7 @@ typedef enum ZNButtonAction : NSUInteger {
     NSTextStorage *outputStorage = self.outputTextView.textStorage;
     if (outputStorage) {
         // enforce appearance
-        outputStorage.foregroundColor = [NSColor lightGrayColor];
-        outputStorage.font = [NSFont userFixedPitchFontOfSize:10.0];
+        [ZNMainPanelController applyOutputTextStorageAppearance:outputStorage];
 
         // scroll to top
         [[self.outputView documentView] scrollPoint:NSZeroPoint];
@@ -284,6 +282,14 @@ typedef enum ZNButtonAction : NSUInteger {
     self.actionButton.hidden = YES;
     
     [self displayStatus:@"" details:nil output:nil];
+}
+
+#pragma mark - Appearance
+
++ (void)applyOutputTextStorageAppearance:(NSTextStorage *)storage
+{
+    storage.foregroundColor = [NSColor lightGrayColor];
+    storage.font = [NSFont userFixedPitchFontOfSize:12.0];
 }
 
 @end
