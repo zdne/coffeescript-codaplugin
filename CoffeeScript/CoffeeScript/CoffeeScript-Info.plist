@@ -17,17 +17,17 @@
 	<key>CFBundlePackageType</key>
 	<string>BNDL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>44</string>
+	<string>45</string>
 	<key>CodaPlugInMinimumAPIVersion</key>
 	<string>6</string>
 	<key>CodaPlugInSupportedAPIVersion</key>
 	<integer>6</integer>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2012 zdne.org. All rights reserved.</string>
+	<string>Copyright © 2012-14 zdne.org. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
 </dict>
